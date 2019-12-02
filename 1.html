@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#1").click(function(){
+			var num = document.getElementById("num123").innerHTML;
+			$.ajax({
+				type: "post",
+				url: "2.php",
+				dataType:'JSON',
+				data: { type:'2', num},
+				success: function (data) {
+					  document.getElementById("num123").innerHTML = data;
+				}, error: function (xhr, ajaxOptions, thrownError) {
+					alert("錯誤");
+				}
+			})
+		})		
+	
+	// $(document).ready(function () {
+		$('#10').click(function () {
+			var num = document.getElementById("num123").innerHTML;
+				$.ajax({
+					type: "post",
+					url: "2.php",
+					data: { type: '3', num },
+					dataType: "json",
+					success: function (data) {
+						document.getElementById("num123").innerHTML = data;
+					}, error: function (xhr, ajaxOptions, thrownError) {
+						alert("錯誤");
+					}
+				})
+			})
+			$('#clear').click(function () {
+				var num = document.getElementById("num123").innerHTML;
+					$.ajax({
+						type: "post",
+						url: "2.php",
+						data: { type: '4', num },
+						dataType: "json",
+						success: function (data) {
+							document.getElementById("num123").innerHTML = data;
+
+						}, error: function (xhr, ajaxOptions, thrownError) {
+							alert("錯誤");
+						}
+					})
+				})
+			$('#plus').click(function(){
+				var num = document.getElementById("num123").innerHTML;
+				var plusnum = document.getElementById("plusnum").value;
+				$.ajax({
+					type:"post",
+					url:"2.php",
+					data:{type:'5',num,plusnum},
+					dataType:"json",
+					success: function(data){
+						document.getElementById("num123").innerHTML = data;
+					},error:function(xhr, ajaxOptions, thrownError){
+						alert("錯誤");
+					}
+				})
+			})
+			$('#less').click(function () {
+				var num = document.getElementById("num123").innerHTML;
+				var lessnum = document.getElementById("lessnum").value;
+				$.ajax({
+					type:"post",
+					url:"2.php",
+					data:{type:'6',num,lessnum},
+					dataType:"json",
+					success:function(data){
+						document.getElementById("num123").innerHTML = data;
+					},error:function(xhr, ajaxOptions, thrownError){
+						alert("錯誤");
+					}
+				})
+			})
+		})
+			
+	</script>
+	<title></title>
+</head>
+<body>
+	<span id="num123" value="0">0</span>
+	<div>
+		<button id="1" >+1</button>
+		<button id="10" >+10</button>
+		<button id="clear">清空</button>
+	</div>
+
+	<div>
+	<input type="text" id="plusnum">
+	<button id="plus">加</button>
+	</div>
+
+	<div>
+	<input type="text" id="lessnum">
+	<button id="less">減</button>
+	</div>
+
+</body>
+</html>
