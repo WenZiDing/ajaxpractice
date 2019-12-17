@@ -36,5 +36,11 @@ if($_POST['type'] == '7'){
   
 }
 
+if($_POST['type'] == '8'){
+  $num = $_POST['num'] / $_POST['dividenum'];
+  echo json_encode($num);
+  
+}
+
 
 ?>
