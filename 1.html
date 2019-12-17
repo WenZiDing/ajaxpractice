@@ -80,6 +80,21 @@
 					}
 				})
 			})
+			$('#Multiply').click(function () {
+			var num = document.getElementById("num123").innerHTML;
+			var Multiplynum = document.getElementById("Multiplynum").value;
+			$.ajax({
+				type: "post",
+				url: "2.php",
+				data: { type: '7', num, Multiplynum },
+				dataType: "json",
+				success: function (data) {
+					document.getElementById("num123").innerHTML = data;
+				}, error: function (xhr, ajaxOptions, thrownError) {
+					alert("錯誤");
+				}
+			})
+		})
 		})
 			
 	</script>
@@ -101,6 +116,11 @@
 	<div>
 	<input type="text" id="lessnum">
 	<button id="less">減</button>
+	</div>
+
+	<div>
+		<input type="text" id="Multiplynum">
+		<button id="Multiply">乘</button>
 	</div>
 
 </body>
