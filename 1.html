@@ -95,6 +95,21 @@
 				}
 			})
 		})
+		$('#divide').click(function () {
+			var num = document.getElementById("num123").innerHTML;
+			var dividenum = document.getElementById("dividenum").value;
+			$.ajax({
+				type: "post",
+				url: "2.php",
+				data: { type: '8', num, dividenum },
+				dataType: "json",
+				success: function (data) {
+					document.getElementById("num123").innerHTML = data;
+				}, error: function (xhr, ajaxOptions, thrownError) {
+					alert("錯誤");
+				}
+			})
+		})
 		})
 			
 	</script>
@@ -121,6 +136,11 @@
 	<div>
 		<input type="text" id="Multiplynum">
 		<button id="Multiply">乘</button>
+	</div>
+
+	<div>
+		<input type="text" id="dividenum">
+		<button id="divide">除</button>
 	</div>
 
 </body>
