@@ -30,7 +30,9 @@ if($_POST['type'] == '6'){
   $num = $_POST['num'] - $_POST['lessnum'];
   echo json_encode($num);
 }
-if($_POST['type'] == ''){
+if($_POST['type'] == '7'){
+  $num = $_POST['num'] * $_POST['Multiplynum'];
+  echo json_encode($num);
   
 }
 
