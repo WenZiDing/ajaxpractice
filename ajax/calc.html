@@ -9,7 +9,7 @@
 			var num = document.getElementById("num123").innerHTML;
 			$.ajax({
 				type: "post",
-				url: "2.php",
+				url: "ajax.php",
 				dataType:'JSON',
 				data: { type:'2', num},
 				success: function (data) {
@@ -25,7 +25,7 @@
 			var num = document.getElementById("num123").innerHTML;
 				$.ajax({
 					type: "post",
-					url: "2.php",
+					url: "ajax.php",
 					data: { type: '3', num },
 					dataType: "json",
 					success: function (data) {
@@ -39,7 +39,7 @@
 				var num = document.getElementById("num123").innerHTML;
 					$.ajax({
 						type: "post",
-						url: "2.php",
+						url: "ajax.php",
 						data: { type: '4', num },
 						dataType: "json",
 						success: function (data) {
@@ -55,7 +55,7 @@
 				var plusnum = document.getElementById("plusnum").value;
 				$.ajax({
 					type:"post",
-					url:"2.php",
+					url:"ajax.php",
 					data:{type:'5',num,plusnum},
 					dataType:"json",
 					success: function(data){
@@ -70,7 +70,7 @@
 				var lessnum = document.getElementById("lessnum").value;
 				$.ajax({
 					type:"post",
-					url:"2.php",
+					url:"ajax.php",
 					data:{type:'6',num,lessnum},
 					dataType:"json",
 					success:function(data){
@@ -85,7 +85,7 @@
 			var Multiplynum = document.getElementById("Multiplynum").value;
 			$.ajax({
 				type: "post",
-				url: "2.php",
+				url: "ajax.php",
 				data: { type: '7', num, Multiplynum },
 				dataType: "json",
 				success: function (data) {
@@ -100,7 +100,7 @@
 			var dividenum = document.getElementById("dividenum").value;
 			$.ajax({
 				type: "post",
-				url: "2.php",
+				url: "ajax.php",
 				data: { type: '8', num, dividenum },
 				dataType: "json",
 				success: function (data) {
